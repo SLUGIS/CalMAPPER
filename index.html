@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>SLU CalMAPPER Projects</title>
+<title>SLU CalMAPPER Treatments</title>
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
@@ -71,15 +71,12 @@
 <script>
 // Allows teaser to function when mouse hovers over, 
 // double-click allows 'Full' to function.
-var map = L.mapbox.map('map', 'slugis.hm7bff2l');
+var map = L.mapbox.map('map', 'slugis.ii9na2o6');
 map.gridControl.options.follow = true;
 var ui = document.getElementById('map-ui');
 
-addLayer(L.mapbox.tileLayer('slugis.ikd9rudi'), 'Treatments', 1);
-addLayer(L.mapbox.tileLayer('slugis.w55ng66r'), 'Completed Projects', 2);
-addLayer(L.mapbox.tileLayer('slugis.o1ypsyvi'), 'Active Projects', 3);
-addLayer(L.mapbox.tileLayer('slugis.wpq1if6r'), 'Proposed Projects', 4);
-addLayer(L.mapbox.tileLayer('slugis.0z6hto6r'), 'Support Points', 5);
+addLayer(L.mapbox.tileLayer('slugis.rwq7u8fr'), 'Projects', 2);
+addLayer(L.mapbox.tileLayer('slugis.hdjz6w29'), 'Support Points', 1);
 
 function addLayer(layer, name, zIndex) {
     layer
