@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>SLU CalMAPPER Treatments</title>
+<title>SLU Treatments</title>
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
@@ -34,7 +34,7 @@
     padding: 0;
     border: 1px solid #BBB;
     border-bottom-width: 0;
-    min-width: 138px;
+    min-width: 50px;
     padding: 10px;
     text-decoration: none;
 }
@@ -71,13 +71,27 @@
 <script>
 // Allows teaser to function when mouse hovers over, 
 // double-click allows 'Full' to function.
-var map = L.mapbox.map('map', 'slugis.ii9na2o6');
+var map = L.mapbox.map('map', 'slugis.jnoidgol');
 map.gridControl.options.follow = true;
 var ui = document.getElementById('map-ui');
 
-addLayer(L.mapbox.tileLayer('slugis.hdjz6w29'), 'Chipping Piles', 3);
-addLayer(L.mapbox.tileLayer('slugis.hx672e29'), 'Fire Prevention Signs', 2);
-addLayer(L.mapbox.tileLayer('slugis.f60nqaor'), 'LPF Treatments', 1)
+addLayer(L.mapbox.tileLayer('slugis.ac9s5rk9'), 'SRA', 1);
+var gridlayer1 = L.mapbox.gridLayer('slugis.ac9s5rk9').addTo(map);
+map.addControl(L.mapbox.gridControl(gridlayer1));
+addLayer(L.mapbox.tileLayer('slugis.3zb8olxr'), 'Active', 6);
+var gridlayer1 = L.mapbox.gridLayer('slugis.3zb8olxr').addTo(map);
+map.addControl(L.mapbox.gridControl(gridlayer1));
+addLayer(L.mapbox.tileLayer('slugis.t4wmte29'), 'Complete', 5);
+var gridlayer1 = L.mapbox.gridLayer('slugis.t4wmte29').addTo(map);
+map.addControl(L.mapbox.gridControl(gridlayer1));
+addLayer(L.mapbox.tileLayer('slugis.n7zgds4i'), 'Planning', 4)
+var gridlayer1 = L.mapbox.gridLayer('slugis.n7zgds4i').addTo(map);
+map.addControl(L.mapbox.gridControl(gridlayer1));
+addLayer(L.mapbox.tileLayer('slugis.u2g1fw29'), 'Proposed', 3)
+var gridlayer1 = L.mapbox.gridLayer('slugis.u2g1fw29').addTo(map);
+map.addControl(L.mapbox.gridControl(gridlayer1));
+addLayer(L.mapbox.tileLayer('slugis.hdjz6w29'), 'Chipping', 2)
+
 
 function addLayer(layer, name, zIndex) {
     layer
