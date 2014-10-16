@@ -66,7 +66,11 @@
 #map-center {
     map.centerzoom({lat: 35.2742, lon: -120.6631}, 10);
 }
-    
+.my-custom-control { background: url('https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_original.png'); 
+background-size: 150px 150px; 
+width: 150px; 
+height: 150px; 
+}    
 </style>
 <ul id='map-ui'></ul>
 <div id='map'></div>
@@ -74,6 +78,24 @@
 // Allows teaser to function when mouse hovers over, 
 // double-click allows 'Full' to function.
 var map = L.mapbox.map('map', 'slugis.jnoidgol');
+var MyControl = L.Control.extend({
+    options: {
+      position: 'bottomleft'
+    },
+
+    onAdd: function (map) {
+      // create the control container with a particular class name
+      // ** you can add the image to the div as a background image using css
+      var container = L.DomUtil.create('div', 'my-custom-control');
+
+      // ... initialize other DOM elements, add listeners, etc.
+      return container;
+    }
+});
+
+map.addControl(new MyControl());
+
+
 map.gridControl.options.follow = true;
 var ui = document.getElementById('map-ui');
 
