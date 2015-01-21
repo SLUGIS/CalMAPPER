@@ -64,13 +64,24 @@
 }
 
 #map-center {
-    map.centerzoom({lat: 35.2742, lon: -120.6631}, 10);
+    map.centerzoom({lat: 35.405, lon: -120.523}, 10);
 }
 .my-custom-control { background: url('https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_original.png'); 
-background-size: 150px 150px; 
-width: 150px; 
-height: 150px; 
-}    
+background-size: 150px 150px;
+background-repeat: no-repeat;
+background-position: center;
+background-clip: border-box;
+transition: background-size 0.2s;
+-webkit-transition: background-size 0.2s;
+transition-timing-function: cubic-bezier(.05,1.2,.72,1.2);
+display: inline-block; 
+width: 200px; 
+height: 200px; 
+}
+.my-custom-control:hover {
+    background-size: 200px;
+}
+
 </style>
 <ul id='map-ui'></ul>
 <div id='map'></div>
@@ -99,31 +110,30 @@ map.addControl(new MyControl());
 map.gridControl.options.follow = true;
 var ui = document.getElementById('map-ui');
 
-addLayer(L.mapbox.tileLayer('slugis.ac9s5rk9'), 'SRA', 1);
-var gridlayer1 = L.mapbox.gridLayer('slugis.ac9s5rk9').addTo(map);
-map.addControl(L.mapbox.gridControl(gridlayer1));
-addLayer(L.mapbox.tileLayer('slugis.3zb8olxr'), 'Active', 6);
-var gridlayer1 = L.mapbox.gridLayer('slugis.3zb8olxr').addTo(map);
-map.addControl(L.mapbox.gridControl(gridlayer1));
-addLayer(L.mapbox.tileLayer('slugis.t4wmte29'), 'Complete', 5);
-var gridlayer1 = L.mapbox.gridLayer('slugis.t4wmte29').addTo(map);
-map.addControl(L.mapbox.gridControl(gridlayer1));
-addLayer(L.mapbox.tileLayer('slugis.n7zgds4i'), 'Planning', 4)
-var gridlayer1 = L.mapbox.gridLayer('slugis.n7zgds4i').addTo(map);
-map.addControl(L.mapbox.gridControl(gridlayer1));
-addLayer(L.mapbox.tileLayer('slugis.u2g1fw29'), 'Proposed', 3)
-var gridlayer1 = L.mapbox.gridLayer('slugis.u2g1fw29').addTo(map);
-map.addControl(L.mapbox.gridControl(gridlayer1));
-addLayer(L.mapbox.tileLayer('slugis.hdjz6w29'), 'Chipping', 2)
+var sraLayer = L.mapbox.tileLayer('slugis.ac9s5rk9');
+var activeLayer = L.mapbox.tileLayer('slugis.3zb8olxr');
+var completeLayer = L.mapbox.tileLayer('slugis.t4wmte29');
+var planningLayer = L.mapbox.tileLayer('slugis.n7zgds4i');
+var proposedLayer = L.mapbox.tileLayer('slugis.u2g1fw29');
+var chippingLayer = L.mapbox.tileLayer('slugis.hdjz6w29');
 
+addLayer(sraLayer, L.mapbox.gridLayer('slugis.ac9s5rk9'),'SRA', 1);
+addLayer(activeLayer, L.mapbox.gridLayer('slugis.3zb8olxr'),'Active', 6);
+addLayer(completeLayer, L.mapbox.gridLayer('slugis.t4wmte29'),'Complete', 5);
+addLayer(planningLayer, L.mapbox.gridLayer('slugis.n7zgds4i'),'Planning', 4);
+addLayer(proposedLayer, L.mapbox.gridLayer('slugis.u2g1fw29'),'Proposed', 3);
+addLayer(chippingLayer, L.mapbox.gridLayer('slugis.hdjz6w29'),'Chipping', 2);
 
-function addLayer(layer, name, zIndex) {
+function addLayer(layer, gridlayer, name, zIndex) {
     layer
         .setZIndex(zIndex)
         .addTo(map);
-
-    // Create a simple layer switcher that toggles layers on
-    // and off.
+    gridlayer
+        .addTo(map);
+    // add the gridControl to the active gridlayer
+    var gridControl = L.mapbox.gridControl(gridlayer, {follow: false}).addTo(map);
+    
+    // Create a simple layer switcher that toggles layers on and off.
     var item = document.createElement('li');
     var link = document.createElement('a');
 
@@ -137,13 +147,14 @@ function addLayer(layer, name, zIndex) {
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
+            map.removeLayer(gridlayer);
             this.className = '';
         } else {
             map.addLayer(layer);
+            map.addLayer(gridlayer);
             this.className = 'active';
         }
     };
-
     item.appendChild(link);
     ui.appendChild(item);
 }
