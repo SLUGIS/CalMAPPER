@@ -97,10 +97,13 @@ var MyControl = L.Control.extend({
     onAdd: function (map) {
       // create the control container with a particular class name
       // ** you can add the image to the div as a background image using css
+      var imageLink = document.createElement('a');
+          imageLink.href = 'http://slocountyfire.org/';
       var container = L.DomUtil.create('div', 'my-custom-control');
+      imageLink.appendChild(container);
 
       // ... initialize other DOM elements, add listeners, etc.
-      return container;
+      return imageLink;
     }
 });
 
