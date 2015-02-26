@@ -1,0 +1,113 @@
+{
+  "bounds": [
+    -180,
+    -85.05112877980659,
+    180,
+    85.05112877980659
+  ],
+  "center": [
+    0,
+    0,
+    2
+  ],
+  "format": "png",
+  "interactivity": {
+    "fields": [],
+    "layer": "waldo",
+    "template_teaser": "<strong>You found Waldo!</strong> "
+  },
+  "minzoom": 0,
+  "maxzoom": 22,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "point",
+      "extent": [
+        -121.30771125266881,
+        34.99681024718087,
+        -120.00317619569549,
+        35.76652305685051
+      ],
+      "id": "signs",
+      "class": "",
+      "Datasource": {
+        "file": "C:\\_projects\\CalMapper\\CalMAPPER_Mapbox\\tilemill_data\\FP_signs.shp",
+        "id": "signs",
+        "project": "signs_legend",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "signs"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -121.33228126945308,
+        34.89083303810661,
+        -119.46652986568519,
+        35.80178926850064
+      ],
+      "id": "slu",
+      "class": "",
+      "Datasource": {
+        "file": "C:\\_data\\Boundary\\slu.shp",
+        "id": "slu",
+        "project": "signs_legend",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "slu"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -120.73695785853513,
+        35.02685524783522,
+        -120.1175056950623,
+        35.42803489842244
+      ],
+      "id": "lpf",
+      "class": "",
+      "Datasource": {
+        "file": "C:\\_projects\\CalMapper\\CalMAPPER_Mapbox\\tilemill_data\\LPF_Treatments.shp",
+        "id": "lpf",
+        "project": "signs_legend",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lpf"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -120.0487487708389,
+        35.159135928498785,
+        -120.0487487708389,
+        35.159135928498785
+      ],
+      "id": "waldo",
+      "class": "",
+      "Datasource": {
+        "file": "C:\\_projects\\CalMapper\\CalMAPPER_Mapbox\\tilemill_data\\waldo.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "waldo"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "",
+  "description": "",
+  "legend": ""
+}
