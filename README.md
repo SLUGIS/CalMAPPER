@@ -1,7 +1,7 @@
 CalMAPPER
 =========
 
-This map is composed of 6 layers: SRA, Active treatments, Completed treatments, Planning treatments, Proposed treatmens, and Chipping piles.  All the treatment layers have been joined with their respective Activity and Funding records from CalMAPPER.  
+This map is composed of 6 layers: SRA, Active treatments, Completed treatments, Planning treatments, Proposed treatmens, and Chipping piles.  All the treatment layers have been joined with their respective Activity and Funding records from CalMAPPER.  All the TileMill projects are included in this repo.  The data used in the projects comes from   <pre><code>X:/_projects/CalMAPPER/MapBox/tilemill_data</code></pre>  
 
 ##Join##
 
