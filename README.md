@@ -13,7 +13,7 @@ The Join is preformed first between treatments and activities on the Treatment G
 *  **Complete_SLU -** This layer contains all treatments that have an Complete status.  It can be toggled on/off. 
 *  **Planning_SLU -** This layer contains all treatments that have a Planning status.  It can be toggled on/off.  
 *  **Proposed_SLU -** This layer contains all treatments that have a Proposed status.  It can be toggled on/off.  
-*  **Chipping -** This layer contains all the points where and address was chipped.  It can be toggled on/off.  
+*  **CalMAPPERSupportPoints -** This layer contains all the points where and address was chipped.  It can be toggled on/off.  
 *  **signs_legend -** This layer is for the basemap and includes a SLU boundary, the Fire Prevention signs around the unit, and LPF treatments that were accessed from their [Region 5 GIS website](http://www.fs.usda.gov/detail/r5/landmanagement/gis/?cid=STELPRDB5327833).  It is the <code><pre> FACTS-Regional Activities in the Past 20 Years</code></pre> file and you will have to open it in ArcMap since it is a .mdb file.  This is if it is ever updated which it has not been in 4 years.  
 
 
