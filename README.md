@@ -18,6 +18,9 @@ The Join is preformed first between treatments and activities on the Treatment G
 *  **CalMAPPERSupportPoints -** This layer contains all the points where an address was chipped.  It can be toggled on/off.  
 *  **signs_legend -** This layer is for the basemap and includes a SLU boundary, the Fire Prevention signs around the unit, and LPF treatments that were accessed from their [Region 5 GIS website](http://www.fs.usda.gov/detail/r5/landmanagement/gis/?cid=STELPRDB5327833).  It is the <code><pre> FACTS-Regional Activities in the Past 20 Years</code></pre> file and you will have to open it in ArcMap since it is a .mdb file.  This is if it is ever updated which it has not been in 4 years.  
 
+#Search Bar  
++   A search bar was added that references an invisible treatment centroids layer (centroids.js).  It has two other .js dependencies in this repo.  Each time a new treatment is added to treatments_refined.shp you will need to generate a new centroids .shp, remove all the fields besides "Name" and then save it as a GeoJSON.  Once you have your GeoJSON centroids layer you need to edit it in a text editor and save it as centroids.js.  Replace the current version with your new one.
+
 #Issues  
 +   Treatments needing to be included in v2 are included as Issues in this repo.  It may end up being more appropiate that they be locates somewhere else in the future, but for now they are here.
 
