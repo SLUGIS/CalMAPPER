@@ -23,7 +23,7 @@ The Join is preformed first between treatments and activities on the Treatment G
 [{ "type": "Feature", "properties": { "name": "Lewis Ranch 2013" }, "geometry": { "type": "Point", "coordinates": [ -120.22254511566175, 35.361812597006463 ] } },</pre></code>  Replace the current version with your new one.
 
 #Issues  
-+   Treatments needing to be included in v2 are included as Issues in this repo.  It may end up being more appropiate that they be locates somewhere else in the future, but for now they are here.
++   Treatments needing to be included in v2 are included as Issues in this repo.  It may end up being more appropiate that they be located somewhere else in the future, but for now they are here.
 
 
 
